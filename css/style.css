@@ -1,0 +1,317 @@
+
+*,
+*::after,
+*::before {
+   box-sizing: border-box;
+}
+
+@font-face {
+   font-family: 'sf-pro-display';
+   src: url('../fonts/SF-Pro-Display-Regular.woff2') format('woff2'),
+         url('../fonts/SF-Pro-Display-Regular.woff.woff') format('woff');
+   font-style: normal;
+   font-weight: normal;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'sf-pro-display';
+   src: url('../fonts/SF-Pro-Display-Bold.woff2') format('woff2'),
+         url('../fonts/SF-Pro-Display-Bold.woff') format('woff');
+   font-style: normal;
+   font-weight: bold;
+   font-display: swap;
+}
+
+@font-face {
+   font-family: 'spaceagecyrillic';
+   src: url('../fonts/spaceagecyrillic-regular.woff2') format('woff2'),
+         url('../fonts/spaceagecyrillic-regular.woff') format('woff');
+   font-style: normal;
+   font-weight: normal;
+   font-display: swap;
+}
+
+body {
+   color: #fff;
+   font-family: 'sf-pro-display';
+   font-size: 16px;
+   line-height: 19px;
+   font-weight: 400;
+}
+
+a {
+   color: inherit; /** цвет как у родителя */
+   text-decoration: none;
+}
+
+button {
+   border: none;
+   background-color: transparent; /** прозрачность */
+   cursor: pointer;
+   color: inherit;
+}
+
+.container {
+   max-width: 1220px; /** max - сможем адаптировать */
+   margin: 0 auto; /** наш блок всегда по центру */
+   padding: 0 10px; /** Нужно нам, чтобы текст не прилипал к краям экрана. Забирает у нашего container 10px слева и справа => max-width: 1220px  */
+}
+
+.title {
+   font-size: 48px;
+   line-height: 48px;
+   font-family: 'spaceagecyrillic';
+   padding: 100px 0;
+   font-weight: normal;
+}
+
+.button {
+   border: 1px solid #FFFFFF;
+   text-transform: uppercase;
+   font-size: 18px;
+   line-height: 21px;
+   text-align: center;
+   padding: 20px 45px;
+}
+
+
+.header {
+   background-image: url(../images/header-bg.jpg);
+   min-height: 100vh;  /** картинка на всю высоту экрана, min означает, что картинка может  расширяться по высоте */
+   background-position: center; /** картинка центрируется по центру */
+   background-repeat: no-repeat; /** картинка не размножается */
+   background-size: cover; /** картинка растягивается и сохраняет пропорции */
+}
+
+.header__inner {
+   display: flex; /** переходят в строку элементы */
+   flex-direction: column; /** в колонку переходят элементы */
+   justify-content: space-between; /** расположение по главной оси */
+   min-height: 100vh; /** наш блок растягивается на всю высоту экрана */
+}
+
+.header__top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 75px 0 30px;
+}
+
+.menu__list {
+   display: flex;
+}
+
+.menu__item {
+   margin-right: 30px;
+}
+
+.menu__link {
+   text-transform: uppercase;
+   font-size: 18px;
+   line-height: 21px;
+   transition: color .5s; /** цвет проявляется не мнгновенно, а через 0.5 сек */
+}
+
+/** цвет при наведении на ссылку */
+.menu__link:hover {
+   color: #CB0E0E;
+}
+
+.phone {
+   font-size: 24px;
+   line-height: 29px;
+   margin-left: auto;
+}
+
+.login {
+   margin-left: 22px;
+   margin-right: 134px;
+}
+
+.header__content {
+   max-width: 600px;
+}
+
+.header__title {
+   font-family: 'spaceagecyrillic';
+   font-size: 60px;
+   line-height: 60px;
+   font-weight: 400;
+   margin-bottom: 20px;
+}
+
+.header__title span {
+   font-size: 110px;
+}
+
+.header__text {
+   font-size: 24px;
+   line-height: 29px;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin-bottom: 50px;
+}
+
+.header__btn {
+   font-size: 24px;
+   line-height: 29px;
+   text-transform: uppercase;
+   text-align: center;
+   width: 100%;
+   border: 1px solid #fff;
+   padding: 15px 10px 16px;
+}
+
+.header__description {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 40px;
+   margin-bottom: 5%;
+}
+
+.header__description-text {
+   width: 165px;
+   font-size: 14px;
+   line-height: 17px;
+}
+
+.header__description-text + .header__description-text {
+   margin-left: 52px;
+}
+
+.about {
+   background-image: url(../images/about-bg.jpg);
+   background-position: center; /** картинка центрируется по центру */
+   background-repeat: no-repeat; /** картинка не размножается */
+   background-size: cover; /** картинка растягивается и сохраняет пропорции */
+}
+
+.about__item {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 150px;
+   flex-wrap: wrap;
+}
+
+.about__item:nth-child(odd) {
+   flex-direction: row-reverse;
+}
+
+.about__img {
+   max-width: 100%;
+}
+
+.about__content {
+   width: 600px;
+   font-family: 'sf-pro-display';
+}
+
+.about__content-title {
+   font-style: normal;
+   font-weight: bold;
+   font-size: 30px;
+   line-height: 36px;
+   margin-bottom: 5px;
+}
+
+.about__content-subtitle {
+   font-style: normal;
+   font-weight: normal;
+   font-size: 12px;
+   line-height: 14px;
+   text-transform: uppercase;
+   color: #036CCA;
+   margin-bottom: 30px;
+}
+
+.about__content-text {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 50px;
+}
+
+.about__content-text p {
+   width: 165px;
+}
+
+.about__table {
+   margin-bottom: 50px;
+}
+
+.about__table-tr {
+   border-bottom: 1px solid #fff;
+   border-top: 1px solid #fff;;
+}
+
+/** обращение к соседней tr */
+.about__table-tr + .about__table-tr {
+   font-style: normal;
+   font-weight: bold;
+   font-size: 36px;
+   line-height: 43px;
+   text-align: center;
+}
+
+.about__table-td {
+   padding: 10px 30px 10px 0;
+}
+
+.about__table-td span {
+   font-size: 14px;
+   line-height: 17px;
+   display: block;
+}
+
+.about__table-caption {
+   caption-side: bottom;
+   text-align: left;
+   margin-top: 20px;
+   font-size: 12px;
+   line-height: 14px;
+}
+
+.how-to {
+   background-image: url(../images/howto-bg.jpg);
+   background-position: top center; /** картинка центрируется по центру */
+   background-repeat: no-repeat; /** картинка не размножается */
+   background-size: cover; /** картинка растягивается и сохраняет пропорции */
+   padding-bottom: 100px;
+}
+
+.how-to__box {
+   text-align: center;
+}
+
+/** плавность */
+.how-to__box circle, 
+.how-to__box text,
+foreignObject {
+   transition: all .5s;
+   cursor: pointer;
+}
+
+/** кружочки делаем синими */
+.how-to__box g:hover circle {
+   r: 20px;
+   fill: #036CCA
+}
+
+.how-to__box g:hover text {
+   fill: #036CCA;
+   font-size: 30px;
+}
+
+.how-to__box g:hover foreignObject {
+   color: #036CCA;
+   font-size: 19px;
+}
+
+foreignObject {
+   text-align: left;
+}
+
+
+
+
